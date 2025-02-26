@@ -21,13 +21,14 @@ function agregarAmigo() {
     };
     // Limpiar el input
     input.value = "";
+    actualizarLista();
 }
 
 function actualizarLista(){
-    let lista = document.getElementById("ListaAmigos");
+    let lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
 
-    namesFriends.forEach((amigo, index) => {
+    namesFriends.forEach((amigo) => {
         let li = document.createElement("li");
         li.textContent = amigo;
         li.setAttribute("role", "listitem");
