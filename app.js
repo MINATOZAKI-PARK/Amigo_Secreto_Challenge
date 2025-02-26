@@ -38,8 +38,12 @@ function actualizarLista(){
 };
 
 function sortearAmigo(){
-    if (namesFriends.length() > 0){ //Valida que haya al menos un amigo en la lista
-        let randomIndex = Math.floor(Math.random() * namesFriends.length())
+    if (namesFriends.length > 0){ //Valida que haya al menos un amigo en la lista
+        let randomIndex = Math.floor(Math.random() * namesFriends.length)
         let secretFriend = namesFriends[randomIndex];
+        document.getElementById("resultado").textContent = "Tu amigo secreto es: " + secretFriend;
+    } else{
+        alert("No hay amigos en la lista.");
+        return;
     }
 }
