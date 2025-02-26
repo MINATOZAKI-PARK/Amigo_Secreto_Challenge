@@ -22,3 +22,16 @@ function agregarAmigo() {
     // Limpiar el input
     input.value = "";
 }
+
+function actualizarLista(){
+    let lista = document.getElementById("ListaAmigos");
+    lista.innerHTML = "";
+
+    namesFriends.forEach((amigo, index) => {
+        let li = document.createElement("li");
+        li.textContent = amigo;
+        li.setAttribute("role", "listitem");
+
+        lista.appendChild(li);
+    });
+}
