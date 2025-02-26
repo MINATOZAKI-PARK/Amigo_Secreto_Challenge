@@ -22,17 +22,24 @@ function agregarAmigo() {
     // Limpiar el input
     input.value = "";
     actualizarLista();
-}
+};
 
 function actualizarLista(){
     let lista = document.getElementById("listaAmigos");
-    lista.innerHTML = "";
+    lista.innerHTML = ""; // Limpia la lista
 
     namesFriends.forEach((amigo) => {
         let li = document.createElement("li");
         li.textContent = amigo;
-        li.setAttribute("role", "listitem");
+        li.setAttribute("role", "listitem");  //Accesibilidad
 
-        lista.appendChild(li);
+        lista.appendChild(li); // Agrega el elemento a la lista
     });
+};
+
+function sortearAmigo(){
+    if (namesFriends.length() > 0){ //Valida que haya al menos un amigo en la lista
+        let randomIndex = Math.floor(Math.random() * namesFriends.length())
+        let secretFriend = namesFriends[randomIndex];
+    }
 }
